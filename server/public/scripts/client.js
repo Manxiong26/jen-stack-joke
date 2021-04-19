@@ -21,7 +21,7 @@ function addJokes(){
     })
     .then(function (response){
         console.log('Added jokes', response);
-        //getJokes();
+        getJokes();
     })
     .catch( function (error){
         console.log('Error from server', error);
@@ -39,7 +39,7 @@ function getJokes(){
     })
     .then( function( response){
         console.log('Response from server', response);
-       // render(response)
+        render(response)
     })
     .catch( function (error){
         console.log('Error from server', error);
@@ -47,4 +47,20 @@ function getJokes(){
     })
     console.log('After making server request...');
     
+}
+
+function render(jokesList){
+    $(`#outputDiv`).empty();
+
+    for(let item of jokesList){
+        console.log(`${item.whoseJoke}${item.jokeQuestion}${item.punchLine}`);
+        $(`#outputDiv`).append(`
+            <div>
+                <p>${item.whoseJoke}
+                <p>${item.jokeQuestion}
+                <p>${item.punchLine}
+            </div>
+        `)
+        
+    }
 }
