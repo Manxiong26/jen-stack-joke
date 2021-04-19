@@ -34,6 +34,7 @@ function addJokes(){
         alert('Sorry, could not add your jokes. Try again later.')
         
     })
+    $(`#whoseJokeIn`).val('');
     $(`#questionIn`).val('');
     $(`#punchlineIn`).val('');
 }
