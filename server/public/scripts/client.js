@@ -19,4 +19,15 @@ function addJokes(){
         url: '/jokes',
         data: newJokes
     })
+    .then(function (response){
+        console.log('Added jokes', response);
+        //getJokes();
+    })
+    .catch( function (error){
+        console.log('Error from server', error);
+        alert('Sorry, could not add your jokes. Try again later.')
+        
+    })
+    $(`#questionIn`).val('');
+    $(`#punchlineIn`).val('');
 }
