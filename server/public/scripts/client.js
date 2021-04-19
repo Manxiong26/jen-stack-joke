@@ -31,3 +31,20 @@ function addJokes(){
     $(`#questionIn`).val('');
     $(`#punchlineIn`).val('');
 }
+
+function getJokes(){
+    $.ajax({
+        method: 'GET',
+        url: '/jokes'
+    })
+    .then( function( response){
+        console.log('Response from server', response);
+       // render(response)
+    })
+    .catch( function (error){
+        console.log('Error from server', error);
+        alert('Sorry, could not get Jokes. Try again later.')
+    })
+    console.log('After making server request...');
+    
+}
