@@ -34,6 +34,13 @@ let jokes = [
   }
 ];
 
+app.post('/jokes', (req, res) =>{
+  let newJokes = req.body;
+  console.log('Got new joeks', newJokes);
+  jokes.push(newJokes);
+  res.sendStatus(201);
+})
+
 // serve back static files
 app.use(express.static('server/public'));
 
