@@ -4,6 +4,12 @@ $( document ).ready( onReady );
 
 function onReady() {
     console.log('DOM ready');
+    $(`#addJokeButton`).on('click', function( event){
+        console.log('clicked');
+        event.preventDefault();
+        addJokes();
+    })
+    getJokes();
 }
 
 function addJokes(){
